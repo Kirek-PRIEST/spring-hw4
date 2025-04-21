@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/task3")
 public class UserController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class UserController {
     @GetMapping
     public String getAllUsers(Model model){
         model.addAttribute("users", usersRepo.getUserList());
-        return "users";
+        return "task3";
     }
 
     @PostMapping()
@@ -27,7 +27,7 @@ public class UserController {
                           @RequestParam String lastName,
                           @RequestParam String email) {
         usersRepo.addUser(firstName, lastName, email);
-        return "redirect:/users";
+        return "redirect:/task3";
 
     }
 
